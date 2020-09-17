@@ -1,8 +1,40 @@
 //Import Helper
-import 'package:flutter/material.dart';]
+import 'package:flutter/material.dart';
 
-Class App extends StatelessWidget {
-  Widget build(context){
-
+class App extends StatefulWidget {
+  createState() {
+    return AppState();
   }
+}
+
+class AppState extends State<App> {
+  int counter = 0;
+  Widget build(context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Text('$counter'),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              counter += 1;
+            });
+          },
+        ),
+        appBar: AppBar(
+          title: Text('Lets see some images!'),
+        ),
+      ),
+    );
+  }
+}
+
+void main() {}
+
+class Circle {}
+
+class Square {}
+
+class Slot<T> {
+  insert(T shape) {}
 }
