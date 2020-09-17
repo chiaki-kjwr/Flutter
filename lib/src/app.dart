@@ -9,15 +9,19 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> {
   int counter = 0;
+
+  fetchImage() {
+
+  }
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
         body: Text('$counter'),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              counter += 1;
+          onPressed:
+            fetchImage,
+
             });
           },
         ),
@@ -29,7 +33,10 @@ class AppState extends State<App> {
   }
 }
 
-void main() {}
+void main() {
+  var circleSlot = new Slot<Circle>();
+  circleSlot.insert(new Circle());
+}
 
 class Circle {}
 
